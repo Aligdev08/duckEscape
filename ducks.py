@@ -1,6 +1,6 @@
 import pygame
 from typing import Tuple
-
+import random
 
 class Duck:
     dir = "Ducks/duck.png"
@@ -12,6 +12,7 @@ class Duck:
         self.duck_surface = self._initialize()
         self.caught = False
         self.type = None  # default
+        self.direction = (random.choice([5, -5]), random.choice([5, -5]))
 
     def _initialize(self) -> pygame.Surface:
         duck = pygame.image.load(self.dir).convert_alpha()

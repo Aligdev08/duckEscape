@@ -18,8 +18,6 @@ duck = ducks.GoldenDuck(
 
 points = 0
 
-direction = (random.choice([5, -5]), random.choice([5, -5]))
-
 spawned_ducks = []
 
 running = True
@@ -43,7 +41,7 @@ while running:
             x, y = duck.get_pos()
             duck_width, duck_height = duck.get_dimensions()
 
-            direction_x, direction_y = direction
+            direction_x, direction_y = duck.direction
 
             if x + duck_width >= screen_width or x <= 0:
                 direction_x *= -1
