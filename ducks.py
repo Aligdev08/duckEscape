@@ -2,8 +2,9 @@ import pygame
 from typing import Tuple
 import random
 
+
 class Duck:
-    dir = "Ducks/duck.png"
+    __dir = "Ducks/duck.png"
     speed: float = 1
 
     def __init__(self, position: Tuple[int, int], scale: float = 0.3):
@@ -15,7 +16,7 @@ class Duck:
         self.direction = (random.choice([5, -5]), random.choice([5, -5]))
 
     def _initialize(self) -> pygame.Surface:
-        duck = pygame.image.load(self.dir).convert_alpha()
+        duck = pygame.image.load(self.__dir).convert_alpha()
         scaled_size = (int(duck.get_width() * self.scale), int(duck.get_height() * self.scale))
         return pygame.transform.scale(duck, scaled_size)
 
@@ -61,7 +62,7 @@ class Duck:
 
 
 class GoldenDuck(Duck):
-    dir = "Ducks/golden_duck.png"
+    __dir = "Ducks/golden_duck.png"
     speed: float = 2
 
     def __init__(self, position: Tuple[int, int], scale: float = 0.4):
